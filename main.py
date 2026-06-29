@@ -72,6 +72,7 @@ def menu():
         print("3 - Mostrar sessão")
         print("4 - Mostrar assento")
         print("5 - Mostrar ingresso")
+        print("6 - Mostrar sala")
         print("0 - Sair")
 
         option = input("Escolha uma opção: ")
@@ -109,7 +110,9 @@ def menu():
                 print(f"Assento: {ticket.seat.row}-{ticket.seat.column}")
                 print(f"Preço: R$ {ticket.price:.2f}")
                 print(f"Status: {ticket.status}")
-
+            case "6":
+                print("=== Sala ===")
+                print(room)
             case "0":
                 print("Encerrando sistema...")
                 break

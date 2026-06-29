@@ -20,3 +20,18 @@ class Seat:
             raise ValueError("Assento deve estar reservado antes da venda")
 
         self.status = "vendido"
+
+    @property
+    def icon(self):
+        if self.accessible:
+            return "♿"
+
+        if self.status == "disponível":
+            return "🟩"
+
+        return "🟥"
+
+    @property
+    def label(self):
+        row = chr(ord("A") + self.row)
+        return f"{row}{self.column + 1}"
