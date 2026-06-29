@@ -48,27 +48,12 @@ session = Session(
 )
 
 
-# Escolhe um assento da sala
-seat = room.layout[0][0]
-
-# Reserva o assento
-session.reserve_seat(seat)
-
-
-# Gera o ingresso
-ticket = Ticket(
-    user,
-    session,
-    seat,
-    session.price
-)
-
 
 def menu():
     while True:
-        print("\n====== INGRESSO.COM ======")
-        print("1 - Mostrar usuário")
-        print("2 - Mostrar evento")
+        print("\n====== RAEDER.COM ======")
+        print("1 - Ver evento")
+        print("2 - Reservar assento")
         print("3 - Mostrar sessão")
         print("4 - Mostrar assento")
         print("5 - Mostrar ingresso")
@@ -79,17 +64,29 @@ def menu():
 
         match option:
             case "1":
-                print("\n=== Usuário ===")
-                print(f"Nome: {user.name}")
-                print(f"Idade: {user.age}")
-                print(f"CPF: {user.cpf}")
-                print(f"Telefone: {user.phone_number}")
-                print(f"Estado: {user.state}")
+                print("\n=== EVENTO ===")
+                print(f"Nome: {session.event.name}")
+                print(f"Duração: {session.event.duration} minutos")
+                print(f"Início: {session.start_time}")
+                print(f"Preço: R$ {session.price:.2f}")
+
+                print("\nMapa da sala:")
+                print(room)
+
 
             case "2":
-                print("\n=== Evento ===")
-                print(f"Nome: {event.name}")
-                print(f"Duração: {event.duration} minutos")
+                print(room)
+                try:
+                    seat = room.get_seat(
+                        input("Escolha o assento (Ex: A1): ")
+                    )
+
+                    session.reserve_seat(seat)
+
+                    print(f"Assento {seat.label} reservado!")
+
+                except Exception as e:
+                    print(e)
 
             case "3":
                 print("\n=== Sessão ===")
@@ -104,12 +101,7 @@ def menu():
                 print(f"Status: {seat.status}")
 
             case "5":
-                print("\n=== Ingresso ===")
-                print(f"Cliente: {ticket.user.name}")
-                print(f"Evento: {ticket.session.event.name}")
-                print(f"Assento: {ticket.seat.row}-{ticket.seat.column}")
-                print(f"Preço: R$ {ticket.price:.2f}")
-                print(f"Status: {ticket.status}")
+                pass
             case "6":
                 print("=== Sala ===")
                 print(room)

@@ -42,28 +42,21 @@ class Room:
 
     def __str__(self):
         max_cols = max(len(row) for row in self.layout)
-
-        text = "\n     "
-
+        text = "\n   "
         for col in range(max_cols):
             text += f"{col+1:>3}"
-
         text += "\n"
-
+        #Itera pelo layout da matriz
         for row_index, row in enumerate(self.layout):
-
             text += f"{chr(ord('A')+row_index):>2}  "
-
             for item in row:
-
+                # Verifica se é um objeto Seat
                 if isinstance(item, Seat):
                     text += f"{item.icon} "
-
+                # Se não, é corredor                    
                 else:
                     text += "   "
-
             text += "\n"
-
-        text += "\n🟩 Disponível   🟥 Ocupado   ♿ Acessível"
+        text += "======================= TELA =======================\n🟩 Disponível   🟥 Ocupado   ♿ Acessível"
 
         return text
