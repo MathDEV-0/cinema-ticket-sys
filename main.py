@@ -85,6 +85,16 @@ def select_user():
     current_user = users[idx]
     print(f"Usuário selecionado: {current_user.name}")
 
+def user_data():
+    global current_user
+    if not current_user:
+        print("Selecione um usuário primeiro.")
+        return
+    
+    print(f"Usuário selecionado: {current_user.name}")
+    print(f"Idade: {current_user.age}")
+    print(f"Telefone: {current_user.phone_number}")
+    print(f"CPF: {current_user.cpf}")
 def select_session_flow():
     global current_session, current_ticket, current_seat, tickets
 
@@ -200,6 +210,7 @@ def menu():
         print("3 - Mostrar assento atual")
         print("4 - Ver tickets do usuário")
         print("5 - Ver todas as salas")
+        print("6 - Informações do usuário")
         print("0 - Sair")
 
         option = input("Escolha uma opção: ")
@@ -218,6 +229,8 @@ def menu():
                 show_user_tickets()
             case "5":
                 show_all_rooms()
+            case "6":
+                user_data()
             case "0":
                 break
 
