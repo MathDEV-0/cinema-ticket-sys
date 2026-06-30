@@ -1,4 +1,6 @@
 id,name,duration,event_type,genre,age_rating,artist,tour,home_team,away_team,championship
 1,Interestelar,169,movie,Sci-Fi,14,,,,,
-2,GRE-nal 445,110,sports,,,,,,Grêmio,Internacional,Final Gauchão
-3,Coldplay Live,120,music,,,,Coldplay,Music of the Spheres Tour,,
+2,GRE-nal 445,110,sports,,,,,Inter,Gremio,Gauchão
+3,Coldplay Live,120,music,,,,Coldplay,,,
+4,A Volta dos que Não Foram,190,generic,,,,,,,
+5,BRA-PEL,90,sports,,,,,Brasil de Pelotas,Pelotas,Ga�ch�o

@@ -3,3 +3,8 @@ id,user_id,session_id,seat_row,seat_col,price,status
 2,2,1,0,2,35.0,ativo
 3,1,2,6,9,45.0,ativo
 4,1,2,6,2,45.0,ativo
+5,1,2,0,0,45.0,ativo
+6,1,2,0,2,45.0,ativo
+7,1,3,6,7,30.0,ativo
+8,5,2,6,7,45.0,ativo
+9,5,5,0,0,10.0,ativo
