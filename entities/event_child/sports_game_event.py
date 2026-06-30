@@ -7,3 +7,18 @@ class SportsGameEvent(Event):
         self.home_team = home_team
         self.away_team = away_team
         self.championship = championship
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "duration": self.duration,
+            "event_type": self.event_type,
+            "genre": "",
+            "age_rating": "",
+            "artist": "",
+            "tour": "",
+            "home_team": self.home_team,
+            "away_team": self.away_team,
+            "championship": self.championship
+        }

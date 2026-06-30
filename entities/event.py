@@ -10,5 +10,12 @@ class Event:
             "id": self.id,
             "name": self.name,
             "duration": self.duration,
-            "event_type": self.event_type
+            "event_type": "generic",
+            "genre": "",
+            "age_rating": "",
+            "artist": "",
+            "tour": "",
+            "home_team": "",
+            "away_team": "",
+            "championship": ""
         }
