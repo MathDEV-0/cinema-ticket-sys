@@ -1,25 +1,36 @@
+import os
 from entities.seat import Seat
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Room:
 
-    def __init__(self, file_path: str):
+    def __init__(self, id: int, name:str,  file_path: str):
+        self.id = id
+        self.name = name
+        self.file_path = file_path
         self.layout = self.load_layout(file_path)
 
     def load_layout(self, file_path: str):
+        full_path = os.path.join(BASE_DIR, "storage", "rooms", file_path)
         matrix = []
-        with open(file_path, "r") as file:
+        with open(full_path, "r") as file:
             for row_index, line in enumerate(file):
                 row = []
                 for col_index, value in enumerate(line.split()):
                     value = int(value)
+
                     if value == 0:
                         row.append(Seat(row_index, col_index))
                     elif value == 4:
-                        row.append(Seat(row_index,col_index,accessible=True))
+                        row.append(Seat(row_index, col_index, accessible=True))
                     else:
-                        row.append(value)
+                        row.append(None)
+
                 matrix.append(row)
+
         return matrix
     
     def get_seat(self, label):
@@ -60,3 +71,18 @@ class Room:
         text += "======================= TELA =======================\n🟩 Disponível   🟥 Ocupado   ♿ Acessível"
 
         return text
+    
+    @staticmethod
+    def from_dict(data):
+        return Room(
+            id=int(data["id"]),
+            name=data["name"],
+            file_path=data["file_path"]
+        )
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "file_path": self.file_path
+        }

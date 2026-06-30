@@ -35,3 +35,22 @@ class Seat:
     def label(self):
         row = chr(ord("A") + self.row)
         return f"{row}{self.column + 1}"
+    
+    # Utils para CSV
+    def to_dict(self):
+        return {
+            "row": self.row,
+            "column": self.column,
+            "accessible": self.accessible,
+            "status": self.status
+        }
+
+    @staticmethod
+    def from_dict(data):
+        seat = Seat(
+            int(data["row"]),
+            int(data["column"]),
+            data["accessible"] == "True"
+        )
+        seat.status = data.get("status", "disponível") 
+        return seat

@@ -4,7 +4,8 @@ from utils.ddd import DDD
 
 class User:
 
-    def __init__(self, name:str, birthday:date, cpf: str, phone_number: str):
+    def __init__(self, id: int,name:str, birthday:date, cpf: str, phone_number: str):
+        self.id = id
         self.name = name
         self.birthday = birthday
         self.cpf = cpf
@@ -72,3 +73,24 @@ class User:
     @property
     def state(self):
         return DDD.get_state(self._phone_number[:2])
+
+    # CSV utils para user
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "birthday": self.birthday.isoformat(),
+            "cpf": self._cpf,
+            "phone_number": self._phone_number,
+            "created_at": self.created_at.isoformat()
+        }
+
+    @staticmethod
+    def from_dict(data):
+        return User(
+            id=int(data["id"]),
+            name=data["name"],
+            birthday=date.fromisoformat(data["birthday"]),
+            cpf=data["cpf"],
+            phone_number=data["phone_number"]
+        )
