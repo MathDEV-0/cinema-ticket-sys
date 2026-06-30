@@ -1,0 +1,5 @@
+id,user_id,session_id,seat_row,seat_col,price,status
+1,1,1,0,1,35.0,ativo
+2,2,1,0,2,35.0,ativo
+3,1,2,6,9,45.0,ativo
+4,1,2,6,2,45.0,ativo
