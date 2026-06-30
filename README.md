@@ -77,11 +77,11 @@ O sistema carrega os dados na inicialização e salva alterações após cada co
 
 ```bash
 python main.py
+```
 
 O menu interativo será exibido no terminal.
 
-📝 Exemplo de Uso
------------------
+## 📝 Exemplo de Uso
 
 1.  Selecione um usuário (opção 1).
 
@@ -93,22 +93,22 @@ O menu interativo será exibido no terminal.
 
 5.  Verifique os tickets do usuário (opção 4).
 
-🧪 Dados de Exemplo
--------------------
+## 🧪 Dados de Exemplo
 
 O projeto inclui dados de exemplo:
 
--   Usuários: Mateus, João, Ana, Lucas
+- Usuários: Mateus, João, Ana, Lucas
 
--   Eventos: Interestelar, GRE-nal 445, Coldplay Live
+- Eventos: Interestelar, GRE-nal 445, Coldplay Live
 
--   Salas: 3 salas com layouts diferentes
+- Salas: 3 salas com layouts diferentes
 
--   Sessões: em datas futuras (ajuste conforme necessário)
+- Sessões: em datas futuras (ajuste conforme necessário)
 
-
-📄 Licença
-----------
+## 📄 Licença
 
 Este projeto é apenas para fins educacionais.
+
+```
+
 ```
