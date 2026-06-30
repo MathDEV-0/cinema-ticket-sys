@@ -11,6 +11,7 @@ Sistema de reserva e venda de ingressos para eventos (cinema, shows, eventos esp
 - Geração de ticket com ID único e persistência
 - Listagem de tickets de um usuário específico
 - Visualização de todas as salas e seus layouts
+- Operações de CRUD (criar usuário, evento e sessão | cancelar ticket)
 
 ## Estrutura do Projeto
 
